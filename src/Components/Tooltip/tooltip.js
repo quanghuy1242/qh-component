@@ -42,8 +42,7 @@ export class Tooltip extends LitElement {
 
   handleCloseTooltip() {
     const tooltip = this.shadowRoot.querySelector('.tooltip-content');
-    tooltip.classList.remove('isOpening');
-    tooltip.classList.add('isClosing');
+    tooltip.classList.replace('isOpening', 'isClosing');
     setTimeout(() => { this.isOpen = false; }, 200);
   }
 
