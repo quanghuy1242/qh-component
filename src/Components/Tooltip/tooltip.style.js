@@ -18,6 +18,7 @@ export const tooltipStyles = css`
     animation-duration: 0.2s;
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
+    border-radius: 3px;
   }
 
   .tooltip-content.isOpening {
