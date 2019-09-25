@@ -1,7 +1,7 @@
 import { css } from "lit-element";
 import { animationStyles } from '../Animations/animations.style';
 
-export const styles = css`
+export const tooltipStyles = css`
   ${animationStyles}
 
   .tooltip-wrapper {

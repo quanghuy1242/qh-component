@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { styles } from './tooltip.style';
+import { tooltipStyles } from './tooltip.style';
 
 export class Tooltip extends LitElement {
   static get properties() {
@@ -12,7 +12,7 @@ export class Tooltip extends LitElement {
   }
 
   static get styles() {
-    return styles;
+    return tooltipStyles;
   }
 
   constructor() {
