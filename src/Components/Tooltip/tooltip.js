@@ -33,10 +33,12 @@ export class Tooltip extends LitElement {
   }
 
   handleOpenTooltip(event) {
-    this.isOpen = true;
-    this.savedData = {
-      x: event.pageX,
-      y: event.pageY
+    if (!this.isOpen) {
+      this.isOpen = true;
+      this.savedData = {
+        x: event.pageX,
+        y: event.pageY
+      }
     }
   }
 
