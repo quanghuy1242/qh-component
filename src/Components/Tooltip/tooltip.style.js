@@ -1,6 +1,9 @@
 import { css } from "lit-element";
+import { animationStyles } from '../Animations/animations.style';
 
 export const styles = css`
+  ${animationStyles}
+
   .tooltip-wrapper {
     display: inline-block;
   }
@@ -23,25 +26,5 @@ export const styles = css`
 
   .tooltip-content.isClosing {
     animation-name: fade-out;
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 0;
-    }
   }
 `;
