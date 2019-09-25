@@ -9,6 +9,7 @@ const config = createDefaultConfig({
 module.exports = (env, argv) => {
   return merge(config, {
     output: {
+      filename: 'qh-component.min.js',
       publicPath: '/'
     },
     devtool: argv.mode !== 'production' ? 'source-map' : 'false',
