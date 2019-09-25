@@ -12,20 +12,17 @@ export const styles = css`
     padding: 0.25rem 0.5rem;
     background-color: gray;
     color: white;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
   }
 
   .tooltip-content.isOpening {
     animation-name: fade-in;
-    animation-duration: 0.2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
   }
 
   .tooltip-content.isClosing {
     animation-name: fade-out;
-    animation-duration: 0.2s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
   }
 
   @keyframes fade-in {
