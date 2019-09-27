@@ -5,7 +5,7 @@ export class Tooltip extends LitElement {
   static get properties() {
     return {
       content: { type: String },
-      align: { type: String },
+      placement: { type: String },
       isOpen: { type: Boolean },
     }
   }
@@ -18,15 +18,15 @@ export class Tooltip extends LitElement {
     super();
     this.content = null;
     this.isOpen = false;
-    this.align = 'bottom';
+    this.placement = 'bottom';
   }
 
   setTooltipAlignment(content, tooltip) {
-    if (this.align === 'bottom') {
+    if (this.placement === 'bottom') {
       tooltip.style.transform = 'translate(-50%, 1rem)';
       tooltip.style.left = '50%';
     }
-    if (this.align === 'top') {
+    if (this.placement === 'top') {
       tooltip.style.transform = `translate(-50%, -${content.offsetHeight + tooltip.offsetHeight + 16}px)`;
       tooltip.style.left = '50%';
     }
