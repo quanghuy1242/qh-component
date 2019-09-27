@@ -5,9 +5,8 @@ export class Tooltip extends LitElement {
   static get properties() {
     return {
       content: { type: String },
-      gap: { type: Number },
+      align: { type: String },
       isOpen: { type: Boolean },
-      savedData: { type: Object },
     }
   }
 
@@ -18,27 +17,33 @@ export class Tooltip extends LitElement {
   constructor() {
     super();
     this.content = null;
-    this.gap = 5;
     this.isOpen = false;
-    this.savedData = {};
+    this.align = 'bottom';
+  }
+
+  setTooltipAlignment(content, tooltip) {
+    if (this.align === 'bottom') {
+      tooltip.style.transform = 'translate(-50%, 1rem)';
+      tooltip.style.left = '50%';
+    }
+    if (this.align === 'top') {
+      tooltip.style.transform = `translate(-50%, -${content.offsetHeight + tooltip.offsetHeight + 16}px)`;
+      tooltip.style.left = '50%';
+    }
   }
 
   updated() {
     if (this.isOpen) {
       const tooltip = this.shadowRoot.querySelector('.tooltip-content');
-      tooltip.style.top = `${this.savedData.y + this.gap}px`;
-      tooltip.style.left = `${this.savedData.x + this.gap}px`;
+      const content = this.shadowRoot.querySelector('slot').assignedElements()[0];
       tooltip.classList.add('isOpening');
+      this.setTooltipAlignment(content, tooltip);
     }
   }
 
-  handleOpenTooltip(event) {
+  handleOpenTooltip() {
     if (!this.isOpen) {
       this.isOpen = true;
-      this.savedData = {
-        x: event.pageX,
-        y: event.pageY
-      }
     }
   }
 

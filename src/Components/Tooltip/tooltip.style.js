@@ -6,19 +6,28 @@ export const tooltipStyles = css`
 
   .tooltip-wrapper {
     display: inline-block;
+    position: relative;
   }
 
   .tooltip-content {
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.25rem 0.5rem;
     background-color: gray;
     color: white;
-    animation-duration: 0.2s;
+    animation-duration: 200ms;
     animation-fill-mode: both;
     animation-timing-function: ease-in-out;
-    border-radius: 3px;
+    color: white;
+    border-radius: 4px;
+    max-width: 250px;
+    padding: 6px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+  }
+
+  .bottom {
+    transform: translate(-50%, 1rem);
+    left: 50%;
   }
 
   .tooltip-content.isOpening {
