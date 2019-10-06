@@ -1,1 +1,1 @@
-import './src/Components/Tooltip/tooltip';
+import './src/Components/Tooltip/qh-tooltip';
