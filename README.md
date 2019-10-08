@@ -1,8 +1,11 @@
 # qh-component
 ## Install
 ```
-npm install
-npm start
+npm i qh-component
+```
+
+```js
+import 'qh-component/dist/qh-component.min.js';
 ```
 
 ## Demo
