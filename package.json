@@ -1,5 +1,5 @@
 {
-  "name": "qh-component",
+  "name": "@quanghuy1242/qh-component",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,6 +7,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open"
   },
+  "repository": "git@github.com:quanghuy1242/qh-component.git",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,5 +22,6 @@
   "dependencies": {
     "lit-element": "^2.2.1",
     "popper.js": "^1.15.0"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
