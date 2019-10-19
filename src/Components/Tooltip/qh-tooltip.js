@@ -1,4 +1,5 @@
 import { LitElement, html, css, property, customElement, query } from 'lit-element';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 import Popper from 'popper.js';
 
 @customElement('qh-tooltip')
@@ -28,6 +29,7 @@ export class AppTooltip extends LitElement {
           animation-duration: 200ms;
           animation-fill-mode: both;
           animation-timing-function: ease-in-out;
+          z-index: 99999999;
         }
 
         .isOpening {
@@ -96,7 +98,7 @@ export class AppTooltip extends LitElement {
         ${this.isOpen
           ? html`
             <div class="tooltip-inner">
-              ${this.content}
+              ${unsafeHTML(this.content)}
             </div>
           `
           : html``}
