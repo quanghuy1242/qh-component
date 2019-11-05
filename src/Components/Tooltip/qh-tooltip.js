@@ -30,6 +30,7 @@ export class AppTooltip extends LitElement {
           animation-fill-mode: both;
           animation-timing-function: ease-in-out;
           z-index: 99999999;
+          line-height: normal;
         }
 
         .isOpening {
