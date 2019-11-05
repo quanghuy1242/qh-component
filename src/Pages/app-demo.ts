@@ -1,4 +1,4 @@
-import { LitElement, customElement, html, css } from 'lit-element';
+import { LitElement, customElement, html, css, TemplateResult, CSSResult } from 'lit-element';
 
 import '../Components/Tooltip/qh-tooltip';
 import '../Components/CircularProgress/qh-circular-progress';
@@ -6,7 +6,7 @@ import '../Components/Stack/qh-stack';
 
 @customElement('app-demo')
 export class AppDemo extends LitElement {
-  static get styles() {
+  static get styles(): CSSResult {
     return css`
       qh-circular-progress {
         --mdc-theme-primary: #416275;
@@ -14,7 +14,7 @@ export class AppDemo extends LitElement {
     `;
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <qh-tooltip content="Đẹp trai">
         <button id="btn-tooltip">Bạn Huy có một đặc điểm là rất</button>
