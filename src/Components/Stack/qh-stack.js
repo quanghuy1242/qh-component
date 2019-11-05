@@ -1,5 +1,4 @@
 import { LitElement, customElement, html, css, property, unsafeCSS } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map';
 
 @customElement('qh-stack')
 export class Stack extends LitElement {
@@ -17,10 +16,6 @@ export class Stack extends LitElement {
         flex-direction: row;
       }
     `;
-  }
-
-  firstUpdated() {
-
   }
 
   render() {
