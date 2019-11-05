@@ -96,13 +96,11 @@ export class AppTooltip extends LitElement {
         @mouseleave=${this.handleCloseTooltip}
         @click=${this.handleCloseTooltip}
       >
-        ${this.isOpen
-          ? html`
-            <div class="tooltip-inner">
-              ${unsafeHTML(this.content)}
-            </div>
-          `
-          : html``}
+        ${this.isOpen && html`
+          <div class="tooltip-inner">
+            ${unsafeHTML(this.content)}
+          </div>
+        `}
         <slot></slot>
       </div>
     `;
