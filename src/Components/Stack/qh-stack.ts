@@ -1,11 +1,20 @@
-import { LitElement, customElement, html, css, property, unsafeCSS } from 'lit-element';
+import {
+  LitElement,
+  customElement,
+  html,
+  css,
+  property,
+  unsafeCSS,
+  TemplateResult,
+  CSSResult
+} from 'lit-element';
 
 @customElement('qh-stack')
 export class Stack extends LitElement {
-  @property({ type: Boolean }) horizontal = false;
-  @property({ type: Number }) gap = 0;
+  @property({ type: Boolean }) horizontal: boolean = false;
+  @property({ type: Number }) gap: number = 0;
 
-  static get styles() {
+  static get styles(): CSSResult {
     return css`
       :host {
         display: flex;
@@ -18,7 +27,7 @@ export class Stack extends LitElement {
     `;
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <style>
         :host > ::slotted(div:not(:last-child)) {

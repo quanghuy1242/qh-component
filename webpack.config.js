@@ -12,6 +12,14 @@ module.exports = (env, argv) => {
       filename: 'qh-component.min.js',
       publicPath: '/'
     },
+    module: {
+      rules: [
+        { test: /\.ts$/, loader: 'ts-loader' }
+      ]
+    },
+    resolve: {
+      extensions: [ '.tsx', '.ts', '.js' ],
+    },
     devtool: argv.mode !== 'production' ? 'source-map' : 'false',
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
