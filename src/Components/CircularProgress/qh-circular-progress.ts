@@ -22,13 +22,13 @@ export type SizeType = "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxl
 
 @customElement('qh-circular-progress')
 export class AppCircularProgress extends LitElement {
-  @property({ type: String }) size: SizeType = "medium";
-  @property({ type: Number }) progress: number;
-  @property({ type: Number }) min: number = 0;
-  @property({ type: Number }) max: number = 1;
-  @property({ type: String }) center: any;
+  @property({ type: String }) public size: SizeType = "medium";
+  @property({ type: Number }) public progress: number;
+  @property({ type: Number }) public min: number = 0;
+  @property({ type: Number }) public max: number = 1;
+  @property({ type: String }) public center: any;
 
-  static get styles(): CSSResultArray {
+  public static get styles(): CSSResultArray {
     return [
       css`
         :host([center]) {
@@ -134,13 +134,13 @@ export class AppCircularProgress extends LitElement {
     ];
   }
 
-  calculateRatio(value: number): number {
+  private calculateRatio(value: number): number {
     if (value < this.min) return 0;
     if (value > this.max) return 1;
     return (value - this.min) / (this.max - this.min);
   }
 
-  circularStyle(size: number): any {
+  private circularStyle(size: number): any {
     return styleMap(
       this.progress !== undefined
       ? {
@@ -152,7 +152,7 @@ export class AppCircularProgress extends LitElement {
     );
   }
 
-  render(): TemplateResult {
+  protected render(): TemplateResult {
     const sizeNumber: number = Size[this.size];
     return html`
       <div

@@ -3,13 +3,13 @@ import { LitElement, customElement, html, css, property, TemplateResult, CSSResu
 @customElement('qh-stack-item')
 export class StackItem extends LitElement {
   @property({ type: String }) a: any;
-  static get styles(): CSSResult {
+  public static get styles(): CSSResult {
     return css`
-      
+
     `;
   }
 
-  render(): TemplateResult {
+  protected render(): TemplateResult {
     return html`
       <slot></slot>
     `;

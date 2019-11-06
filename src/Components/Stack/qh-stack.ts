@@ -9,12 +9,24 @@ import {
   CSSResult
 } from 'lit-element';
 
+export type AlignmentType =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'baseline'
+  | 'stretch';
+
 @customElement('qh-stack')
 export class Stack extends LitElement {
-  @property({ type: Boolean }) horizontal: boolean = false;
-  @property({ type: Number }) gap: number = 0;
+  @property({ type: Boolean }) public horizontal: boolean = false;
+  @property({ type: Number }) public gap: number = 0;
+  @property({ type: String }) public verticalAlign: AlignmentType = 'start';
+  @property({ type: String }) public horizontalAlign: AlignmentType = 'start';
 
-  static get styles(): CSSResult {
+  public static get styles(): CSSResult {
     return css`
       :host {
         display: flex;
@@ -27,7 +39,7 @@ export class Stack extends LitElement {
     `;
   }
 
-  render(): TemplateResult {
+  protected render(): TemplateResult {
     return html`
       <style>
         :host > ::slotted(div:not(:last-child)) {

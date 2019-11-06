@@ -30,14 +30,14 @@ export type PlacementType =
 
 @customElement('qh-tooltip')
 export class AppTooltip extends LitElement {
-  @query('slot') referenceElement: HTMLSlotElement;
-  @query('.tooltip-inner') tooltipElement: HTMLDivElement;
+  @query('slot') private referenceElement: HTMLSlotElement;
+  @query('.tooltip-inner') private tooltipElement: HTMLDivElement;
 
-  @property({ type: String }) content: string = 'Nội dung';
-  @property({ type: String }) placement: PlacementType = 'bottom';
-  @property({ type: Boolean }) isOpen: boolean = false;
+  @property({ type: String }) public content: string = 'Nội dung';
+  @property({ type: String }) public placement: PlacementType = 'bottom';
+  @property({ type: Boolean }) private isOpen: boolean = false;
 
-  static get styles(): CSSResultArray {
+  public static get styles(): CSSResultArray {
     return [
       css`
         .tooltip-inner {
@@ -99,13 +99,13 @@ export class AppTooltip extends LitElement {
     }
   }
 
-  handleOpenTooltip(): void {
+  private handleOpenTooltip(): void {
     if (!this.isOpen) {
       this.isOpen = true;
     }
   }
 
-  handleCloseTooltip(): void {
+  private handleCloseTooltip(): void {
     if (this.tooltipElement) {
       this.tooltipElement.classList.replace('isOpening', 'isClosing');
       setTimeout(() => {
@@ -114,7 +114,7 @@ export class AppTooltip extends LitElement {
     }
   }
 
-  render(): TemplateResult {
+  protected render(): TemplateResult {
     return html`
       <div
         class="tooltip-wrapper"
