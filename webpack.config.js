@@ -10,7 +10,8 @@ module.exports = (env, argv) => {
   return merge(config, {
     output: {
       filename: 'qh-component.min.js',
-      publicPath: '/'
+      publicPath: '/',
+      path: path.resolve(__dirname, 'lib/min')
     },
     module: {
       rules: [

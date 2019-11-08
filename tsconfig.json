@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "experimentalDecorators": true,
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "declaration": true,
+    "outDir": "./lib"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

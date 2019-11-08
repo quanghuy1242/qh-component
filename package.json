@@ -1,12 +1,14 @@
 {
   "name": "@quanghuy1242/qh-component",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "prepublish": "npm run build"
+    "build": "webpack --mode production",
+    "predeploy-build": "rimraf -rf lib",
+    "deploy-build": "webpack --mode production & tsc",
+    "prepare": "npm run deploy-build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
     "@babel/plugin-proposal-decorators": "^7.6.0",
     "@babel/preset-typescript": "^7.7.0",
     "@open-wc/building-webpack": "^2.6.2",
+    "rimraf": "^3.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.0",
