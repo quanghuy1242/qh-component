@@ -23,7 +23,7 @@ module.exports = (env, argv) => {
     },
     devtool: argv.mode !== 'production' ? 'source-map' : 'false',
     devServer: {
-      contentBase: path.join(__dirname, 'dist'),
+      contentBase: path.join(__dirname, 'lib/min'),
       compress: true
     }
   })
