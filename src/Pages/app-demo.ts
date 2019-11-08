@@ -1,8 +1,7 @@
 import { LitElement, customElement, html, css, TemplateResult, CSSResult } from 'lit-element';
 
-import '../Components/Tooltip/qh-tooltip';
-import '../Components/CircularProgress/qh-circular-progress';
-import '../Components/Stack/qh-stack';
+import '../components/qh-tooltip/qh-tooltip';
+import '../components/qh-circular-progress/qh-circular-progress';
 
 @customElement('app-demo')
 export class AppDemo extends LitElement {
@@ -10,6 +9,11 @@ export class AppDemo extends LitElement {
     return css`
       qh-circular-progress {
         --mdc-theme-primary: #416275;
+      }
+
+      .demo-stack {
+        height: 200px;
+        width: 500px;
       }
     `;
   }
@@ -20,10 +24,6 @@ export class AppDemo extends LitElement {
         <button id="btn-tooltip">Bạn Huy có một đặc điểm là rất</button>
       </qh-tooltip>
       <qh-circular-progress size="xlarge" center></qh-circular-progress>
-      <qh-stack horizontal gap=${16}>
-        <div>aaaaaaaaaaaaaaa</div>
-        <div>bbbbbbbbbbbbbbb</div>
-      </qh-stack>
     `;
   }
 }
